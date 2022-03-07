@@ -135,6 +135,7 @@ $prtgresult += @"
     <LimitErrorMsg>$LimitErrorPercent% Quota used</LimitErrorMsg>
 
     <LimitMode>1</LimitMode>
+    <float>1</float>
   </result>
 
 "@
