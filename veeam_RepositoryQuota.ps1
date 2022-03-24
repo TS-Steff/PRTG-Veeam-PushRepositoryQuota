@@ -50,6 +50,10 @@ $LimitWarninPercent = 80
 $LimitErrorPercent = 90
 #####  CONFIG END  #####
 
+# check if veeam powershell snapin is loaded. if not, load it
+if( (Get-PSSnapin -Name veeampssnapin -ErrorAction SilentlyContinue) -eq $nul){
+    Add-PSSnapin veeampssnapin
+}
 
 if($TenantName){
     $Tenants = Get-VBRCloudTenant -Name $TenantName
