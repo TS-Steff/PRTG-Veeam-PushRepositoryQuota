@@ -84,13 +84,16 @@ foreach($Tenant in $Tenants){
                     "Used %"     = $tenantResoucre.UsedSpacePercentage
                 }
             }
+            
+            $repoTable += $repoObj
         }
+    }elseif($tenantResoucres.Count -eq 0){
+        write-verbose "Tenant does not have online Repository"
+    
     }else{
         Write-Error "More then one Repository for this customer available"
         exit
     }
-
-    $repoTable += $repoObj
     
     write-host ""
 }
